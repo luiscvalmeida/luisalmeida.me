@@ -1,0 +1,24 @@
+{
+  "name": "luisalmeida.me",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p $PORT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiscvalmeida/luisalmeida.me.git"
+  },
+  "keywords": [],
+  "author": "Luís Almeida <luiscvalmeida@gmail.com>",
+  "license": "UNLICENSED",
+  "homepage": "https://luisalmeida.me",
+  "dependencies": {
+    "next": "^7.0.2",
+    "now": "^12.1.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
