@@ -6,20 +6,51 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "next build",
+    "lint": "eslint pages --ext .jsx --ext .js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luiscvalmeida/luisalmeida.me.git"
   },
-  "keywords": [],
   "author": "Luís Almeida <luiscvalmeida@gmail.com>",
   "license": "UNLICENSED",
   "homepage": "https://luisalmeida.me",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "minireset.css": "0.0.3",
     "next": "^7.0.2",
-    "now": "^12.1.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.4",
+    "lint-staged": "^8.0.5"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "commonjs": true
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint pages --ext .jsx --ext .js --fix",
+      "git add"
+    ]
   }
 }
