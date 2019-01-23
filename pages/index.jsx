@@ -28,6 +28,13 @@ const InnerContainer = styled.div`
   align-items: center;
   max-width: 520px;
 
+  > img {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) and (orientation: portrait) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   > h1 {
     font-size: 2.5em;
     font-weight: 900;
