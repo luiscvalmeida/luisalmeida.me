@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import 'minireset.css';
 
 const MainContainer = styled.main`
   display: flex;
@@ -37,7 +36,7 @@ const InnerContainer = styled.div`
 
   > h1 {
     font-size: 2.5em;
-    font-weight: 900;
+    font-weight: bold;
     margin: 20px 0;
   }
 
@@ -71,7 +70,11 @@ export default () => (
     </Head>
     <MainContainer>
       <InnerContainer>
-        <img src="/static/user.png" alt="my profile" width={150} height={150} />
+        <picture>
+          <source srcSet="/static/user.webp" type="image/webp" />
+          <source srcSet="/static/user.png" type="image/png" />
+          <img src="/static/user.png" alt="me" width={150} height={150} />
+        </picture>
         <h1>Hello!</h1>
         <p>
           I&#39;m Luís Almeida, a frontend developer from Porto, Portugal, who

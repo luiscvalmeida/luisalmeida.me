@@ -1,6 +1,9 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet, createGlobalStyle } from 'styled-components';
+import globalStyles from '../styled-components/global-styles';
+
+const GlobalStyle = createGlobalStyle`${globalStyles}`;
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -31,7 +34,7 @@ export default class MyDocument extends Document {
             content="Hello, I'm Luís Almeida, a frontend developer from Porto, Portugal, who loves to shape applications for the online world"
           />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/static/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-129318827-1"
@@ -46,25 +49,9 @@ export default class MyDocument extends Document {
           `,
             }}
           />
-          <style>
-            {`
-              @import url(https://rsms.me/inter/inter-ui.css);
-
-              body, html, #__next {
-                font-family: Inter UI, sans-serif;
-                width: 100%;
-                height: 100%;
-              }
-
-              @supports (font-variation-settings: normal) {
-                html {
-                font-family: Inter UI var alt, sans-serif;
-                }
-              }
-            `}
-          </style>
         </Head>
         <body>
+          <GlobalStyle />
           <Main />
           <NextScript />
         </body>

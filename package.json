@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "My personal website",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "next build",
     "lint": "eslint pages --ext .jsx --ext .js"
   },
@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/luiscvalmeida/luisalmeida.me.git"
   },
+  "private": true,
   "author": "Luís Almeida <luiscvalmeida@gmail.com>",
   "license": "UNLICENSED",
   "homepage": "https://luisalmeida.me",
@@ -50,9 +51,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,md}": [
+    "*.{js,jsx}": [
       "prettier --write",
-      "eslint pages --ext .jsx --ext .js --fix",
+      "eslint --fix",
       "git add"
     ]
   },
